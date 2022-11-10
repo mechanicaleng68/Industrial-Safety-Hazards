@@ -1,1 +1,1 @@
-# Industrial-Safety-Hazards
+# Safety-Hazards
