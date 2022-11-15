@@ -7,12 +7,14 @@ input{
     display: none;
 }
 label{
-    color: white;
+    color: black;
 }
 .upload-image{
     height: 25px;
-    width: 70px;
-    background-color: grey;
+    width: 200px;
+    background-color: orange;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: black;
 }
