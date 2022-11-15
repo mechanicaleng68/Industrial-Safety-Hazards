@@ -18,7 +18,7 @@ function App () {
       <button type="submit">Submit</button>
       
 
-{/*TODO: Add relevant feature for upload photo, upload to BLOB- Amazon than connect to MONGODB*/}      
+{/*(Mariela) CURRENTLY WORKING ON: Adding relevant feature for upload photo, upload to BLOB- Amazon than connect to MONGODB*/}      
       <button
         style={{
           backgroundColor: 'orange',
