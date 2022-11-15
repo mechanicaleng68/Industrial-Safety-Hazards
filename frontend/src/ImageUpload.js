@@ -6,7 +6,7 @@ function ImageUpload(){
     return(
         <div className="main">
             <div className="upload-image">
-                <label htmlFor="imgs">Upload</label>
+                <label htmlFor="imgs">Upload Photo</label>
             </div>
             <input id="imgs" type="file" accept="image/png, image/jpeg,.txt,.doc" onChange={(e)=>setData(e.target.files)} />
         </div>
