@@ -3,42 +3,45 @@ import './App.css';
 
 import ImageUpload from './ImageUpload';
 
-
-
 function App () {
   return (
-    <div className="App">
+    <React.Fragment>
+      {/*React.Fragment is used to stack divs*/}
 
-      <header className="app-header">
-        <h1>Safety Hazards</h1>
-      </header>
+      <div className="App">
+        <header className="app-header">
+          <h1>Safety Hazards</h1>
+        </header>
+      </div>
 
-    
+      <div>
 
+        <h2>How to submit a safety hazard warning:</h2>
+        <ul>
+          <li>Provide a description of the safety hazard.</li>
+          <li>Provide the address of the safety hazard.</li>
+          <li>Upload a photo (optional)</li>
+          <li>Submit</li>
+        </ul>
+      </div>
 
-{/*TODO: Need to connect safety hazard description, provided by user to collect in MongoDB;*/} 
-      <textarea className="description" />
+      <div>
+        {/*TODO: Need to connect safety hazard description, provided by user to collect in MongoDB;*/}
+        <textarea className="description" />
 
-      <ImageUpload />;     
+        {/*TODO: Add relevant feature for user to add address which will be converted to geolocation*/}
+        <button className="btn-address">Add Address</button>
+         
+        <ImageUpload />
 
-{/*TODO: Need to make button clickable and fix .btn-submit at App.css- something is wrong with the syntax */}
-      <button type="submit">Submit</button>
+        
+      {/*TODO: Need to make button clickable and fix .btn-submit at App.css- something is wrong with the syntax */}
+      <button className="btn-submit"> Submit</button>
+
+      </div>
+
       
-
-
-{/*TODO: Add relevant feature for user to add address which will be converted to geolocation*/}
-      <button
-        style={{
-          backgroundColor: 'orange',
-          padding: '10px',
-          borderRadius: '10px',
-        }}
-      >
-        Add Address
-      </button>
-
-    </div>
-
+    </React.Fragment>
   );
 }
 
