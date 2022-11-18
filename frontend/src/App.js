@@ -17,12 +17,12 @@ function App () {
       <div>
 
         <h2>How to submit a safety hazard warning:</h2>
-        <ul>
+        <ol>
           <li>Provide a description of the safety hazard.</li>
           <li>Provide the address of the safety hazard.</li>
           <li>Upload a photo (optional)</li>
           <li>Submit</li>
-        </ul>
+        </ol>
       </div>
 
       <div>
@@ -30,17 +30,15 @@ function App () {
         <textarea className="description" />
 
         {/*TODO: Add relevant feature for user to add address which will be converted to geolocation*/}
-        <button className="btn-address">Add Address</button>
-         
+        <button className="btn-address">Add Postal Code</button>
+
         <ImageUpload />
 
-        
-      {/*TODO: Need to make button clickable and fix .btn-submit at App.css- something is wrong with the syntax */}
-      <button className="btn-submit"> Submit</button>
+        {/*TODO: Need to make button clickable and fix .btn-submit at App.css- something is wrong with the syntax */}
+        <button className="btn-submit"> Submit</button>
 
       </div>
 
-      
     </React.Fragment>
   );
 }
