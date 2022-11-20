@@ -1,12 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import "./App.css";
+import React from 'react';
+import {useState} from 'react';
+import './App.css';
 
-import ImageUpload from "./ImageUpload";
+import ImageUpload from './ImageUpload';
 
-function App() {
-  const [state, setState] = useState("initialState");
-  
+function App () {
+  const [state, setState] = useState ('add description');
+
   return (
     <React.Fragment>
       {/*React.Fragment is used to stack divs*/}
@@ -32,17 +32,19 @@ function App() {
         <textarea
           className="description"
           value={state}
-          onChange={(e) => setState(e.target.value)}
+          onChange={e => setState (e.target.value)}
         />
-
-        {/*TODO: Add relevant feature for user to add address which will be converted to geolocation*/}
-        <button className="btn-address">Add Postal Code</button>
 
         <ImageUpload />
 
-        {/*TODO: Need to make button clickable and fix .btn-submit at App.css- something is wrong with the syntax */}
-        <button onClick={() => console.log(state)} className="btn-submit">
-          {" "}
+      </div>
+
+      <div>
+        <button
+          onClick={() => console.log (state, File)}
+          className="btn-submit"
+        >
+          {' '}
           Submit
         </button>
       </div>
