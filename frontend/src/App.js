@@ -6,7 +6,7 @@ import ImageUpload from "./ImageUpload";
 
 function App() {
   const [state, setState] = useState("initialState");
-  
+
   return (
     <React.Fragment>
       {/*React.Fragment is used to stack divs*/}
