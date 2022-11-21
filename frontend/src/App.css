@@ -17,15 +17,12 @@
   border-radius: 10px;
 }
 
-.btn-address {
-  background-color: coral;
-  padding: 10px;
-  border-radius: 10px;
-}
-
 
 .btn-submit {
   background-color: coral;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: 20px;
+  width: 500px;
+  height: 30px;
 }
