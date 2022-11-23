@@ -18,14 +18,14 @@ const hazardSchema = new Schema({
   }
 });
 
-const hazard = mongoose.model('hazard', hazardSchema, 'hazards');
+const Hazard = mongoose.model('hazard', hazardSchema, 'hazards');
 
 export const getAllHazards = async () => {
-  const Hazards = await Hazards.find();
+  const Hazards = await Hazard.find();
   return Hazards;
 };
 
 export const createHazard = async (hazard) => {
-  const newHazard = await hazard.create(hazard);
+  const newHazard = await Hazard.create(hazard);
   return newHazard;
 };
