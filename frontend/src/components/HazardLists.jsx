@@ -34,7 +34,7 @@ const HazardList = () => {
   const [hazards, setHazards] = useState([]);
   useEffect(() => {
     const getHazards = async () => {
-      const response = await fetch("/api/hazard/list");
+      const response = await fetch("/api/hazard");
       const hazardsData = await response.json();
       setHazards(hazardsData);
     };
@@ -53,3 +53,5 @@ const HazardList = () => {
 };
 
 export default HazardList;
+
+
