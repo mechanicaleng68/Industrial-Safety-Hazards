@@ -1,8 +1,20 @@
 import { Router } from 'express';
-import { createHazard } from '../db/models/hazardModel.js';
+import { createHazard, getAllHazards } from '../db/models/hazardModel.js';
 import { debug } from '../server.js';
 
 const router = Router();
+
+router.get('/', async (req, res) => {
+  //const hazard = req.body;
+  debug('in list route');
+  try {
+    const hazards = await getAllHazards();
+    res.send(hazards);
+  } catch (error) {
+    debug(error);
+    res.status(500).send(error);
+  }
+});
 
 router.post('/', async (req, res) => {
   const hazard = req.body;
