@@ -6,6 +6,11 @@ import '../App.css';
 
 export default function AddNew () {
     const [state, setState] = useState ('add description');
+    const handleSubmit=()=>{
+      const hazard={
+        hazardDescription: state
+      }
+    }
   return (
     <React.Fragment>
       <div>
@@ -26,7 +31,7 @@ export default function AddNew () {
 
       <div>
         <button
-          onClick={() => console.log (state, File)}
+          onClick={handleSubmit}
           className="btn-submit"
         >
           {' '}
