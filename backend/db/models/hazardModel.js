@@ -1,4 +1,4 @@
-import mongoose from "../mongoose.js";
+import mongoose from '../mongoose.js';
 
 const Schema = mongoose.Schema;
 
@@ -12,15 +12,20 @@ const hazardSchema = new Schema({
       city: String,
       province: String,
       country: String,
-      postalCode: String,
+      postalCode: String
     },
-    required: false,
-  },
+    required: false
+  }
 });
 
-const hazard = mongoose.model("hazard", hazardSchema, "hazards");
+const Hazard = mongoose.model('hazard', hazardSchema, 'hazards');
+
+export const getAllHazards = async () => {
+  const Hazards = await Hazard.find();
+  return Hazards;
+};
 
 export const createHazard = async (hazard) => {
-  const newHazard = await hazard.create(hazard);
+  const newHazard = await Hazard.create(hazard);
   return newHazard;
 };

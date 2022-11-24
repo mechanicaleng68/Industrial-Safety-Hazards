@@ -9,6 +9,7 @@ import AddNew from './pages/AddNew';
 //import HorizontalLinearStepper from './Stepper.js';
 
 import Footer from './Footer';
+import HazardForm from './components/HazardForm';
 
 function App () {
   /*console.log('before useEffect');
@@ -29,7 +30,7 @@ function App () {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/new" element={<AddNew />} />
+          <Route path="/new" element={<HazardForm />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

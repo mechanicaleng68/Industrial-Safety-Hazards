@@ -19,6 +19,8 @@ const HazardForm = () => {
     const newHazard = await response.json();
     console.log(newHazard);
   };
+  console.log(hazardName);
+  
   return (
     <form onSubmit={handleSubmit}>
       <label>
