@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'firebase';
+//import firebase from 'firebase';
 import '../App.css';
 
 export default function About () {
@@ -9,7 +9,7 @@ export default function About () {
         <h1>About</h1>;
         <p>This website was created for learning purposes only!</p>
         <p>
-          Any resemblance to actual events or locales or persons, living or dead, is entirely coincidental!
+          Any resemblance to actual events or persons, living or dead, is entirely coincidental!
         </p>
         <p>
           All photos, used in the website were taken from the Internet. Also, they were placed in entirely random locations.
