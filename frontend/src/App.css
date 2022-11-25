@@ -4,8 +4,9 @@
 }
 
 .container {
-  margin: 5rem;
+  margin: 0 rem;
   text-align: center;
+  background-color: rgba(216, 204, 200, 0.547);
 }
 
 .nav {
@@ -15,7 +16,7 @@
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .site-title {
