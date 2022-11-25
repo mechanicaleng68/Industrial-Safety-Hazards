@@ -2,15 +2,16 @@ import React from 'react';
 
 function Home () {
   return (
-    <div
+    <img
+      className="home-image"
+      src="https://noobpreneur.com/wp-content/uploads/2015/04/funny-workplace-safety-sign.jpg&quot;)"
+      alt="bird"
       style={{
-        backgroundImage: `url("https://noobpreneur.com/wp-content/uploads/2015/04/funny-workplace-safety-sign.jpg")`,
         backgroundSize: 'cover',
-        height: '85vh',
+        height: '75vh',
+        width: '80vw',
       }}
-    >
-      Hello World
-    </div>
+    />
   );
 }
 
