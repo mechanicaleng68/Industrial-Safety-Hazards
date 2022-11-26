@@ -1,40 +1,86 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
+import '../App.css';
 
 const HazardForm = () => {
-  const [hazardName, setHazardName] = useState("");
-  const [hazardDescription, setHazardDescription] = useState("");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [userName, setUserName] = useState ('');
+  const [userPhone, setUserPhone] = useState ('');
+  const [hazardDescription, setHazardDescription] = useState (
+    'testing description'
+  );
+  const handleSubmit = async e => {
+    e.preventDefault ();
     const hazard = {
-        hazardName,
-        hazardDescription,
+      userName,
+      hazardDescription,
+      userPhone,
     };
-    const response = await fetch("/api/hazard", {
-      method: "POST",
+    const response = await fetch ('/api/hazard', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(hazard),
+      body: JSON.stringify (hazard),
     });
-    const newHazard = await response.json();
-    console.log(newHazard);
+    const newHazard = await response.json ();
+    console.log (newHazard);
   };
-  console.log(hazardName);
-  
+  console.log (userName);
+
   return (
     <form onSubmit={handleSubmit}>
+
       <label>
-        Hazard Name:
-        <input onChange={(event) => setHazardName(event.target.value)} value={hazardName} />
-      </label>
-      <label>
-        Hazard Description:
+        <h3
+          style={{
+            color: 'black',
+            font: 'bold',
+            display: 'flex',
+            margin: '20px',
+          }}
+        >
+          Add Description:
+        </h3>
         <input
-          onChange={(event) => setHazardDescription(event.target.value)}
+          className="hazard-description"
+          onChange={event => setHazardDescription (event.target.value)}
           value={hazardDescription}
         />
       </label>
-      <button type="submit">Add Hazard</button>
+      <label>
+        <h3
+          style={{
+            color: 'black',
+            font: 'bold',
+            display: 'flex',
+            margin: '20px',
+          }}
+        >
+          Add your Name:
+        </h3>
+        <input
+          className="user-name"
+          onChange={event => setUserName (event.target.value)}
+          value={userName}
+        />
+      </label>
+      <label>
+        <h3
+          style={{
+            color: 'black',
+            font: 'bold',
+            display: 'flex',
+            margin: '20px',
+          }}
+        >
+          Add your phone number:
+        </h3>
+        <input
+          className="user-phone"
+          onChange={event => setUserPhone (event.target.value)}
+          value={userPhone}
+        />
+      </label>
+      <button className="btn-submit" type="submit">Submit Hazard</button>
     </form>
   );
 };
