@@ -59,11 +59,19 @@ nav li:hover {
 }
 
 
+.h3 {
+    color: black;
+    font: bold;
+    display: flex;
+    margin: 20px;
+}
+
 .hazard-description {
   width: 500px;
   height: 200px;
   margin: 20px;
   border-radius: 10px;
+  border: solid chocolate;
   display: flex;
 }
 
@@ -72,6 +80,7 @@ nav li:hover {
   height: 50px;
   margin: 20px;
   border-radius: 10px;
+  border: solid chocolate;
   display: flex
 }
 
@@ -80,20 +89,23 @@ nav li:hover {
   height: 50px;
   margin: 20px;
   border-radius: 10px;
+  border: solid chocolate;
   display: flex;
 }
 
 .new-image {
   display: flex;
   margin: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 150px;
+  border: solid chocolate;
+  background-color: white;
 }
 
 .choose-image {
   display: flex;
   margin:20px;
-  border: solid orange;
-  width: 250px;
-  height: 50px;
 }
 
 
@@ -110,6 +122,7 @@ nav li:hover {
   font: bold 15px arial;
  justify-content: center;
  align-content:center;
+ border-color: solid chocolate;
 }
 
 
