@@ -3,10 +3,10 @@ import mongoose from '../mongoose.js';
 const Schema = mongoose.Schema;
 
 const hazardSchema = new Schema ({
-  userName: {type: String, required: true, unique: true},
+  userName: {type: String, required: true},
   userPhone: {type: String, required: true, unique: true},
-  hazardPostalCode: {type: String, required: true, unique: true},
-  hazardDescription: {type: String, required: true, unique: true},
+  hazardPostalCode: {type: String},
+  hazardDescription: {type: String, required: true},
   hazardDate: [{Day: Number, Month: Number, Year: Number}],
   hazardLocation: {
     type: {
