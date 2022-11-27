@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import '../App.css';
 
+import ImageUpload from './ImageUpload.jsx';
+
 const HazardForm = () => {
   const [userName, setUserName] = useState ('');
   const [userPhone, setUserPhone] = useState ('');
@@ -30,14 +32,7 @@ const HazardForm = () => {
     <form onSubmit={handleSubmit}>
 
       <label>
-        <h3
-          style={{
-            color: 'black',
-            font: 'bold',
-            display: 'flex',
-            margin: '20px',
-          }}
-        >
+        <h3 className="h3">
           Add Description:
         </h3>
         <input
@@ -47,15 +42,8 @@ const HazardForm = () => {
         />
       </label>
       <label>
-        <h3
-          style={{
-            color: 'black',
-            font: 'bold',
-            display: 'flex',
-            margin: '20px',
-          }}
-        >
-          Add your Name:
+        <h3 className="h3">
+          Add your Name (First, Last):
         </h3>
         <input
           className="user-name"
@@ -64,14 +52,7 @@ const HazardForm = () => {
         />
       </label>
       <label>
-        <h3
-          style={{
-            color: 'black',
-            font: 'bold',
-            display: 'flex',
-            margin: '20px',
-          }}
-        >
+        <h3 className="h3">
           Add your phone number:
         </h3>
         <input
@@ -80,6 +61,10 @@ const HazardForm = () => {
           value={userPhone}
         />
       </label>
+      <h3 className="h3">
+        Add Image:
+      </h3>
+      <ImageUpload />
       <button className="btn-submit" type="submit">Submit Hazard</button>
     </form>
   );
