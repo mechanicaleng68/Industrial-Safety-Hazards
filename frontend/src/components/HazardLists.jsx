@@ -52,6 +52,6 @@ const HazardList = () => {
   );
 };
 
-export default HazardList;
+export default HazardDetail;
 
 
