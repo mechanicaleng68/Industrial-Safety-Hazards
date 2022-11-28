@@ -10,11 +10,18 @@
 }
 
 .home-image-bird {
-  backgroundSize: cover;
+  background-size: cover;
         height: 80vh;
         width: 70vw;
 }
 
+.photo-smokin-rmd {
+height: 40vh;
+width: 20vw;
+border: 10px solid rgba(216, 204, 200, 0.547);
+display: flex-center;
+
+}
 
 .nav {
   background-color: chocolate;
