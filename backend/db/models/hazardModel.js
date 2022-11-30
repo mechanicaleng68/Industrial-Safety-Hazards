@@ -22,11 +22,16 @@ const hazardSchema = new Schema ({
 const Hazard = mongoose.model ('hazard', hazardSchema);
 
 export const getAllHazards = async () => {
-  const Hazards = await Hazard.find ();
-  return Hazards;
+  const hazards = await Hazard.find ();
+  return hazards;
 };
 
 export const createHazard = async hazard => {
   const newHazard = await Hazard.create (hazard);
   return newHazard;
+};
+
+export const getHazardById = async id => {
+  const superhero = await Superhero.findById (id);
+  return superhero;
 };
