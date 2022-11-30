@@ -5,7 +5,8 @@ import ImageUpload from './ImageUpload.jsx';
 
 const HazardForm = () => {
   const [hazardDescription, setHazardDescription] = useState (
-    'add description');
+    'add description'
+  );
   const [userName, setUserName] = useState ('');
   const [userPhone, setUserPhone] = useState ('');
   const [hazardDate, setHazardDate] = useState ('');
