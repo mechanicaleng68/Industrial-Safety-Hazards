@@ -1,5 +1,9 @@
 import {Router} from 'express';
-import {createHazard, getAllHazards} from '../db/models/hazardModel.js';
+import {
+  createHazard,
+  getAllHazards,
+  getHazardById,
+} from '../db/models/hazardModel.js';
 import {debug} from '../server.js';
 
 const router = Router ();
@@ -22,6 +26,20 @@ router.post ('/', async (req, res) => {
   try {
     const newHazard = await createHazard (hazard);
     res.send (newHazard);
+  } catch (error) {
+    debug (error);
+    res.status (500).send (error);
+  }
+});
+
+router.get ('/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const hazard = await getHazardById (id);
+    if (!hazard) {
+      return res.status (404).send ('Invalid superhero id');
+    }
+    res.send (hazard);
   } catch (error) {
     debug (error);
     res.status (500).send (error);
