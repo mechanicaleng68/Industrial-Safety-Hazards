@@ -4,17 +4,19 @@ import '../App.css';
 import ImageUpload from './ImageUpload.jsx';
 
 const HazardForm = () => {
+  const [hazardDescription, setHazardDescription] = useState (
+    'add description');
   const [userName, setUserName] = useState ('');
   const [userPhone, setUserPhone] = useState ('');
-  const [hazardDescription, setHazardDescription] = useState (
-    'testing description'
-  );
+  const [hazardDate, setHazardDate] = useState ('');
+
   const handleSubmit = async e => {
     e.preventDefault ();
     const hazard = {
-      userName,
       hazardDescription,
+      userName,
       userPhone,
+      hazardDate,
     };
     const response = await fetch ('/api/hazard', {
       method: 'POST',
@@ -65,6 +67,16 @@ const HazardForm = () => {
         Add Image:
       </h3>
       <ImageUpload />
+      <label>
+        <h3 className="h3">
+          Date:
+        </h3>
+        <input
+          className="hazard-date"
+          onChange={event => setHazardDate (event.target.value)}
+          value={new Date ()}
+        />
+      </label>
       <button className="btn-submit" type="submit">Submit Hazard</button>
     </form>
   );
