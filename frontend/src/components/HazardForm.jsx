@@ -73,9 +73,10 @@ const HazardForm = () => {
           Date:
         </h3>
         <input
+        type='date'
           className="hazard-date"
           onChange={event => setHazardDate (event.target.value)}
-          value={new Date ()}
+          value={hazardDate}
         />
       </label>
       <button className="btn-submit" type="submit">Submit Hazard</button>
