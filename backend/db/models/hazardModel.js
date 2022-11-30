@@ -7,7 +7,7 @@ const hazardSchema = new Schema ({
   userPhone: {type: String, required: true, unique: true},
   hazardPostalCode: {type: String},
   hazardDescription: {type: String, required: true},
-  hazardDate: [{Day: Number, Month: Number, Year: Number}],
+  hazardDate: {type: Date, required: true},
   hazardLocation: {
     type: {
       city: String,
