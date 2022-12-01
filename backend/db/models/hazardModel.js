@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const hazardSchema = new Schema({
   hazardName: { type: String, required: true, unique: true },
   hazardPostalCode: [String],
-  hazardDescription: [String],
+  hazardDescription: { type: String, required: true, unique: true },
   hazardDate: [{ Day: Number, Mont: Number, Year: Number }],
   hazardLocation: {
     type: {
