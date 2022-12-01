@@ -37,7 +37,7 @@ router.get ('/:id', async (req, res) => {
   try {
     const hazard = await getHazardById (id);
     if (!hazard) {
-      return res.status (404).send ('Invalid superhero id');
+      return res.status (404).send ('Invalid hazard id');
     }
     res.send (hazard);
   } catch (error) {
