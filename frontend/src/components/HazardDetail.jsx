@@ -1,36 +1,75 @@
-const HazardDetail = props => {
-  const {
-    hazardName,
-    hazardDescription,
-    hazardPostalCode,
-    hazardDate,
-    hazardLocation,
-  } = hazard;
+import React, {useEffect, useState} from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import {useParams} from 'react-router-dom';
+
+const HazardDetail = () => {
+  const [hazard, setHazard] = useState ();
+  const params = useParams ();
+  const id = params.id;
+  console.log ('the id from props is', id);
+  useEffect (
+    () => {
+      const getHazard = async () => {
+        const response = await fetch (`/hazard/detail/${id}`);
+        const data = await response.json ();
+        setHazard (data);
+        console.log (data);
+      };
+      getHazard ();
+    },
+    [id]
+  );
+
+  if (!hazard) {
+    return <div>Loading</div>;
+  }
   return (
-    <div>
-      <p>Hazard Name:</p>
-      <p>{hazardName}</p>
-      <p>Hazard Description:</p>
-      <p>{hazardDescription}</p>
-      <p>Hazard Postal Code:</p>
-      <ul>
-        {hazardPostalCode.map (power => {
-          return <li key={hazardPostalCode}>{hazardPostalCode}</li>;
-        })}
-      </ul>
-      <p>{hazardDate}</p>
-      <p>Location:</p>
-      {!hazardLocation
-        ? <p>Unknown</p>
-        : <div>
-            <p>City:</p>
-            <p>{hazardLocation.city}</p>
-            <p>Province:</p>
-            <p>{hazardLocation.province}</p>
-            <p>Country:</p>
-            <p>{hazardLocation.country}</p>
-          </div>}
-    </div>
+    <React.Fragment>
+      <div><h2>REPORTED HAZARDS</h2></div>
+      <div>
+        <Card variant="outlined" sx={{minWidth: 275, maxWidth: 400}}>
+          <CardContent sx={{textAlign: 'left'}}>
+            <Typography variant="h2" color="text.secondary" gutterBottom>
+              {hazard.description}
+            </Typography>
+
+            <br />
+            <div>
+              Date:
+              <ul>
+                {hazard.date.map (date => {
+                  return <li key={date}>{date}</li>;
+                })}
+              </ul>
+            </div>
+            <br />
+            <div>
+              User Name:
+              <ul>
+                {hazard.name.map (name => {
+                  return <li key={name}>{name}</li>;
+                })}
+              </ul>
+            </div>
+            <br />
+            <div>
+              User Phone:
+              <ul>
+                {hazard.phone.map (phone => {
+                  return (
+                    <li key={phone._id}>
+                      {hazard.name}({hazard.phone})
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </React.Fragment>
   );
 };
 

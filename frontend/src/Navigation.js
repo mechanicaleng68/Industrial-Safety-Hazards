@@ -9,6 +9,8 @@ export default function Navigation () {
       </Link>
       <ul>
         <CustomLInk to="/new">Add New</CustomLInk>
+        <CustomLInk to="/api/hazard/:id">Hazard Details</CustomLInk>
+        <CustomLInk to="/api/hazard">Hazard List</CustomLInk>
         <CustomLInk to="/about">About</CustomLInk>
 
       </ul>

@@ -124,11 +124,10 @@ nav li:hover {
   margin:20px;
 }
 
-
-
 .btn-submit {
+  border-color: chocolate;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   margin: 20px;
   margin-bottom: 40px;
@@ -138,7 +137,13 @@ nav li:hover {
   font: bold 15px arial;
  justify-content: center;
  align-content:center;
- border-color: solid chocolate;
+}
+
+.btn-submit:hover {
+  background-color: sandybrown;
+}
+.btn-submit:active {
+  background-color: chocolate;
 }
 
 

@@ -14,8 +14,9 @@ const HazardList = () => {
 
   useEffect (() => {
     const getHazards = async () => {
-      const response = await fetch ('/api/hazard');
+      const response = await fetch ('/hazard');
       const hazardsData = await response.json ();
+      console.log (hazardsData);
       setHazards (hazardsData);
     };
 
@@ -29,56 +30,33 @@ const HazardList = () => {
         <Table sx={{minWidth: 650}} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="right">Placeholder_category</TableCell>
-              <TableCell align="right">Hazard Description</TableCell>
-              <TableCell align="right">Hazard Date</TableCell>
-              <TableCell align="right">Placeholder_address</TableCell>
+              <TableCell>Hazard Description</TableCell>
+              <TableCell>Hazard Date</TableCell>
               <TableCell>User Name</TableCell>
-              <TableCell align="right">User Phone</TableCell>
+              <TableCell>User Phone</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {hazards.map (hazard => (
               <TableRow
-                key={hazard.name}
+                key={hazard._id}
                 sx={{'&:last-child td, &:last-child th': {border: 0}}}
               >
                 <TableCell component="th" scope="row">
-                  {hazard.name}
+                  {hazard.hazardDate}
                   <Link to={`/hazards/detail/${hazard._id}`}>
                     Go to detail
                   </Link>
 
                 </TableCell>
-                <TableCell align="right">{hazard.category}</TableCell>
+
                 <TableCell>
-                  <ul>
-                    {hazard.description.map (description => {
-                      return <li key={description}>{description}</li>;
-                    })}
-                  </ul>
+                  {hazard.userName}
                 </TableCell>
                 <TableCell>
-                  {' '}<ul>
-                    {hazard.date.map (date => {
-                      return <li key={date}>{date}</li>;
-                    })}
-                  </ul>
+                  {hazard.userPhone}
                 </TableCell>
-                <TableCell>
-                  <ul>
-                    {hazard.address.map (address => {
-                      return <li key={address}>{address}</li>;
-                    })}
-                  </ul>
-                </TableCell>
-                <TableCell>
-                  <ul>
-                    {hazard.phone.map (phone => {
-                      return <li key={phone}>{phone}</li>;
-                    })}
-                  </ul>
-                </TableCell>
+
               </TableRow>
             ))}
           </TableBody>

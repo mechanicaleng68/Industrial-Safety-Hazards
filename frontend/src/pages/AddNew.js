@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HorizontalLinearStepper from '../Stepper';
-import ImageUpload from '../ImageUpload';
+//import ImageUpload from '../ImageUpload';
 import '../App.css';
 
 
@@ -25,7 +25,7 @@ export default function AddNew () {
           onChange={e => setState (e.target.value)}
         />
 
-        <ImageUpload />
+        {/*<ImageUpload />*/}
 
       </div>
 
