@@ -5,12 +5,11 @@ export default function Navigation () {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-      Safety Hazards
+        Safety Hazards
       </Link>
       <ul>
         <CustomLInk to="/new">Add New</CustomLInk>
-        <CustomLInk to="/api/hazard/:id">Hazard Details</CustomLInk>
-        <CustomLInk to="/api/hazard">Hazard List</CustomLInk>
+        <CustomLInk to="/hazard">Hazard Report</CustomLInk>
         <CustomLInk to="/about">About</CustomLInk>
 
       </ul>
@@ -19,8 +18,8 @@ export default function Navigation () {
 }
 
 function CustomLInk({to, children, ...props}) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({path: resolvedPath.pathname, end: true});
+  const resolvedPath = useResolvedPath (to);
+  const isActive = useMatch ({path: resolvedPath.pathname, end: true});
   return (
     <li className={isActive === to ? 'active' : ''}>
       <Link to={to} {...props}>
