@@ -82,6 +82,15 @@ nav li:hover {
   display: flex;
 }
 
+.hazard-location {
+  width: 500px;
+  height: 35px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid chocolate;
+  display: flex
+}
+
 .user-name {
   width: 500px;
   height: 35px;
