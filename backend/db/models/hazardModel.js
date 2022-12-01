@@ -5,17 +5,18 @@ const Schema = mongoose.Schema;
 const hazardSchema = new Schema ({
   userName: {type: String, required: true},
   userPhone: {type: String, required: true, unique: true},
-  hazardPostalCode: {type: String},
+  //hazardPostalCode: {type: String},
   hazardDescription: {type: String, required: true},
   hazardDate: {type: Date, required: true},
   hazardLocation: {
-    type: {
+    type: String,
+    /*{
       city: String,
       province: String,
       country: String,
       postalCode: String,
-    },
-    required: false,
+    },*/
+    required: true,
   },
 });
 
