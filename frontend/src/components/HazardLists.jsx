@@ -30,8 +30,9 @@ const HazardList = () => {
         <Table sx={{minWidth: 650}} aria-label="simple table">
           <TableHead>
             <TableRow>
-          
+
               <TableCell>HAZARD DESCRIPTION</TableCell>
+              <TableCell>HAZARD LOCATION</TableCell>
               <TableCell>HAZARD DATE</TableCell>
               <TableCell>USER NAME</TableCell>
               <TableCell>USER PHONE</TableCell>
@@ -43,9 +44,13 @@ const HazardList = () => {
                 key={hazard._id}
                 sx={{'&:last-child td, &:last-child th': {border: 0}}}
               >
-               <TableCell>
+                <TableCell>
                   {hazard.hazardDescription}
                 </TableCell>
+                <TableCell>
+                  {hazard.hazardLocation}
+                </TableCell>
+
                 <TableCell component="th" scope="row">
                   {hazard.hazardDate}
                   {/*<Link to={`/hazards/detail/${hazard._id}`}>
@@ -53,7 +58,7 @@ const HazardList = () => {
             </Link>*/}
 
                 </TableCell>
-                
+
                 <TableCell>
                   {hazard.userName}
                 </TableCell>
