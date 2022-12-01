@@ -12,16 +12,16 @@ const addHazardToDatabase = async hazard => {
 const hazardDeepDitch = {
   userName: 'Deep Ditch',
   hazardPostalCode: 'T3E 4M2',
-  hazardDescription: [' A deep ditch in the middle of street'],
-  hazardDate: [15, 11, 2022],
+  hazardDescription: ' A deep ditch in the middle of street',
+  hazardDate: '2022/09/02',
   hazardLocation: {city: 'Calgary', province: 'AB', country: 'Canada'},
 };
 
 const hazardBlackIce = {
-  userName: ['Black Ice'],
-  hazardPostalCode: ['A5I 3R6'],
-  hazardDescription: ['Extended Black Ice Area that is very Slippery'],
-  hazardDate: [8, 5, 2022],
+  userName: 'Black Ice',
+  hazardPostalCode: 'A5I 3R6',
+  hazardDescription: 'Extended Black Ice Area that is very Slippery',
+  hazardDate: '2022/10/01',
   location: {
     city: 'Calgary',
     province: 'AB',
