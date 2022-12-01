@@ -14,7 +14,7 @@ const HazardList = () => {
 
   useEffect (() => {
     const getHazards = async () => {
-      const response = await fetch ('/hazard');
+      const response = await fetch ('/api/hazard');
       const hazardsData = await response.json ();
       console.log (hazardsData);
       setHazards (hazardsData);
