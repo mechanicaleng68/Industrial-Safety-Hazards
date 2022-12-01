@@ -44,9 +44,9 @@ const HazardList = () => {
               >
                 <TableCell component="th" scope="row">
                   {hazard.hazardDate}
-                  <Link to={`/hazards/detail/${hazard._id}`}>
+                  {/*<Link to={`/hazards/detail/${hazard._id}`}>
                     Go to detail
-                  </Link>
+            </Link>*/}
 
                 </TableCell>
 

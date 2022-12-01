@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import AddNew from './pages/AddNew';
 import Footer from './pages/Footer';
-import HazardDetail from './components/HazardDetail';
+//import HazardDetail from './components/HazardDetail';
 import HazardForm from './components/HazardForm';
 import HazardList from './components/HazardLists';
 
@@ -26,7 +26,7 @@ function App () {
           <Route path="/new" element={<HazardForm />} />
           <Route path="/hazard" element={<HazardList />} />
           <Route path="/about" element={<About />} />
-          <Route path="/hazards/detail/:id" element={<HazardDetail />} />
+          {/*<Route path="/hazards/detail/:id" element={<HazardDetail />} />*/}
         </Routes>
       </div>
       <Footer />
