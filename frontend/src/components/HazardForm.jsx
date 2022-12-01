@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import '../App.css';
 
-import ImageUpload from './ImageUpload.jsx';
+//import ImageUpload from './ImageUpload.jsx';
 
 const HazardForm = () => {
   const [hazardDescription, setHazardDescription] = useState ('');
+  const [hazardLocation, setHazardLocation] = useState ('');
   const [userName, setUserName] = useState ('');
   const [userPhone, setUserPhone] = useState ('');
   const [hazardDate, setHazardDate] = useState ('');
@@ -13,6 +14,7 @@ const HazardForm = () => {
     e.preventDefault ();
     const hazard = {
       hazardDescription,
+      hazardLocation,
       hazardDate,
       userName,
       userPhone,
@@ -44,6 +46,17 @@ const HazardForm = () => {
       </label>
       <label>
         <h3 className="h3">
+          Add Hazard Location:
+        </h3>
+        <input
+          className="hazard-location"
+          onChange={event => setHazardLocation (event.target.value)}
+          value={hazardLocation}
+        />
+      </label>
+
+      <label>
+        <h3 className="h3">
           Date:
         </h3>
         <input
@@ -73,10 +86,11 @@ const HazardForm = () => {
           value={userPhone}
         />
       </label>
-      <h3 className="h3">
+
+     {/* <h3 className="h3">
         Add Image:
       </h3>
-      <ImageUpload />
+  <ImageUpload />*/}
 
       <button className="btn-submit" type="submit">Submit Hazard</button>
     </form>
