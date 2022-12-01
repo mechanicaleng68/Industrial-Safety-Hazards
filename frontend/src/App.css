@@ -9,6 +9,20 @@
   background-color: rgba(216, 204, 200, 0.547);
 }
 
+.home-image-bird {
+  background-size: cover;
+        height: 80vh;
+        width: 70vw;
+}
+
+.photo-smokin-rmd {
+height: 40vh;
+width: 20vw;
+border: 10px solid rgba(216, 204, 200, 0.547);
+display: flex-center;
+
+}
+
 .nav {
   background-color: chocolate;
   color: white;
@@ -52,23 +66,79 @@ nav li:hover {
 }
 
 
-.description {
+.h3 {
+    color: black;
+    font: bold;
+    display: flex;
+    margin: 20px;
+}
+
+.hazard-description {
   width: 500px;
-  height: 200px;
+  height: 150px;
   margin: 20px;
   border-radius: 10px;
+  border: solid chocolate;
   display: flex;
 }
 
+.user-name {
+  width: 500px;
+  height: 35px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid chocolate;
+  display: flex
+}
+
+.hazard-date {
+  width: 500px;
+  height: 35px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid chocolate;
+  display: flex
+}
+
+.user-phone {
+  width: 500px;
+  height: 35px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid chocolate;
+  display: flex;
+}
+
+.new-image {
+  display: flex;
+  margin: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 150px;
+  border: solid chocolate;
+  background-color: white;
+}
+
+.choose-image {
+  display: flex;
+  margin:20px;
+}
+
+
 
 .btn-submit {
-  background-color: chocolate;
+  background-color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 20px;
-  width: 500px;
+  margin-bottom: 40px;
+  width: 150px;
   height: 30px;
   display: flex;
+  font: bold 15px arial;
+ justify-content: center;
+ align-content:center;
+ border-color: solid chocolate;
 }
 
 

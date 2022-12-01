@@ -1,57 +1,91 @@
-import React, { useEffect, useState } from "react";
-const HazardDetail = (props) => {
-  const { hazardName, hazardDescription, hazardPostalCode, hazardDate, hazardLocation } = hazard;
-  return (
-    <div>
-      <p>Hazard Name:</p>
-      <p>{hazardName}</p>
-      <p>Hazard Description:</p>
-      <p>{hazardDescription}</p>
-      <p>Hazard Postal Code:</p>
-      <ul>
-        {hazardPostalCode.map((power) => {
-          return <li key={hazardPostalCode}>{hazardPostalCode}</li>;
-        })}
-      </ul>
-      <p>{hazardDate}</p>
-      <p>Location:</p>
-      {!hazardLocation ? (
-        <p>Unknown</p>
-      ) : (
-        <div>
-          <p>City:</p>
-          <p>{hazardLocation.city}</p>
-          <p>Province:</p>
-          <p>{hazardLocation.province}</p>
-          <p>Country:</p>
-          <p>{hazardLocation.country}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+import React, {useEffect, useState} from 'react';
+
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import {Link} from 'react-router-dom';
+
 const HazardList = () => {
-  const [hazards, setHazards] = useState([]);
-  useEffect(() => {
+  const [hazards, setHazards] = useState ([]);
+
+  useEffect (() => {
     const getHazards = async () => {
-      const response = await fetch("/api/hazard");
-      const hazardsData = await response.json();
-      setHazards(hazardsData);
+      const response = await fetch ('/api/hazard');
+      const hazardsData = await response.json ();
+      setHazards (hazardsData);
     };
-    getHazards();
+
+    getHazards ();
   }, []);
+
   return (
     <div>
-      <h2>Hazard List</h2>
-      {hazards.length > 0
-        ? hazards.map((hazard) => {
-            return <HazardDetail hazard={hazard} />;
-          })
-        : "No hazards"}
+      <h2>Safety Hazards</h2>
+      <TableContainer component={Paper}>
+        <Table sx={{minWidth: 650}} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="right">Placeholder_category</TableCell>
+              <TableCell align="right">Hazard Description</TableCell>
+              <TableCell align="right">Hazard Date</TableCell>
+              <TableCell align="right">Placeholder_address</TableCell>
+              <TableCell>User Name</TableCell>
+              <TableCell align="right">User Phone</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {hazards.map (hazard => (
+              <TableRow
+                key={hazard.name}
+                sx={{'&:last-child td, &:last-child th': {border: 0}}}
+              >
+                <TableCell component="th" scope="row">
+                  {hazard.name}
+                  <Link to={`/hazards/detail/${hazard._id}`}>
+                    Go to detail
+                  </Link>
+
+                </TableCell>
+                <TableCell align="right">{hazard.category}</TableCell>
+                <TableCell>
+                  <ul>
+                    {hazard.description.map (description => {
+                      return <li key={description}>{description}</li>;
+                    })}
+                  </ul>
+                </TableCell>
+                <TableCell>
+                  {' '}<ul>
+                    {hazard.date.map (date => {
+                      return <li key={date}>{date}</li>;
+                    })}
+                  </ul>
+                </TableCell>
+                <TableCell>
+                  <ul>
+                    {hazard.address.map (address => {
+                      return <li key={address}>{address}</li>;
+                    })}
+                  </ul>
+                </TableCell>
+                <TableCell>
+                  <ul>
+                    {hazard.phone.map (phone => {
+                      return <li key={phone}>{phone}</li>;
+                    })}
+                  </ul>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };
 
 export default HazardList;
-
-
