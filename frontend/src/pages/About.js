@@ -33,6 +33,12 @@ export default function About () {
         />
         {' '}
         Reza
+        <img
+          className="photo-smokin-rmd"
+          src="https://firebasestorage.googleapis.com/v0/b/project-2-c8133.appspot.com/o/DJ%20Dustin.png?alt=media&token=38fea323-2bd2-4d56-9c0f-c5184cc05333"
+          alt="Dustin"
+        />
+        Dustin
 
       </div>
     </React.Fragment>
