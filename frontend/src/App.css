@@ -16,8 +16,8 @@
 }
 
 .photo-smokin-rmd {
-height: 40vh;
-width: 20vw;
+height: 46vh;
+width: 24vw;
 border: 10px solid rgba(216, 204, 200, 0.547);
 display: flex-center;
 
@@ -75,7 +75,7 @@ nav li:hover {
 
 .hazard-description {
   width: 500px;
-  height: 150px;
+  height: 170px;
   margin: 20px;
   border-radius: 10px;
   border: solid chocolate;
@@ -84,7 +84,7 @@ nav li:hover {
 
 .hazard-location {
   width: 500px;
-  height: 35px;
+  height: 55px;
   margin: 20px;
   border-radius: 10px;
   border: solid chocolate;
@@ -93,7 +93,7 @@ nav li:hover {
 
 .user-name {
   width: 500px;
-  height: 35px;
+  height: 55px;
   margin: 20px;
   border-radius: 10px;
   border: solid chocolate;
@@ -102,7 +102,7 @@ nav li:hover {
 
 .hazard-date {
   width: 500px;
-  height: 35px;
+  height: 55px;
   margin: 20px;
   border-radius: 10px;
   border: solid chocolate;
@@ -111,7 +111,7 @@ nav li:hover {
 
 .user-phone {
   width: 500px;
-  height: 35px;
+  height: 55px;
   margin: 20px;
   border-radius: 10px;
   border: solid chocolate;
