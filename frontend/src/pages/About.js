@@ -13,7 +13,7 @@ export default function About () {
           Any resemblance to actual events or persons, living or dead, is entirely coincidental!
         </p>
         <p>
-          All photos, used in the website were taken from the Internet. Also, they were placed in entirely random locations.
+          Some photos, used in the website were taken from the Internet.
         </p>
       </div>
 
